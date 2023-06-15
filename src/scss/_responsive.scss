@@ -1,0 +1,410 @@
+@mixin md($value) {
+  @if $value == small {
+    @media (max-width: 425px) {
+      @content;
+    }
+  } @else
+  if $value == smallx {
+    @media (max-width: 360px) {
+      @content;
+    }
+  } @else
+  if $value == medium {
+    @media (min-width: 700px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width:$value) {
+      @content;
+    }
+  }
+}
+@include md(small) {
+  #peoplebox{
+   position: relative;
+   top:-40px;
+  }
+  //img
+  #imgpeople.img-people {
+    position: relative;
+    top: -20%;
+    transform: scale(0.7);
+  }
+
+  #ingresar {
+    position: relative;
+    top: -80px;
+    width: 60%;
+  }
+  //text
+  .text-d {
+    display: none;
+  }
+
+  #workTitle.text {
+    font-size: 1.4em;
+
+    &-sm {
+      font-weight: 700;
+      font-size: 1.4em;
+    }
+
+    &-title {}
+
+    &-sub {
+      font-size: 1.6em;
+    }
+  }
+
+  .nav-hed {
+    .logo {
+      left: 10%;
+      transform: scale(0.8);
+    }
+
+    .title-logo {
+      position: relative;
+      left: 5%;
+    }
+  }
+  //about
+  .section-content {
+    padding: 4em 2em;
+  }
+  @include md(small) {
+    #about.p-content {
+      padding: 1em;
+    }
+  }
+  //how to do
+  .v-timeline:before {
+    opacity: 0;
+  }
+
+  .v-timeline-item {
+    margin-bottom: 1.5em;
+  }
+
+  .v-timeline-item__body {
+    max-width: 100%;
+  }
+
+  #registerprev.register-prev{
+   width: 80%;
+   position: relative;
+   z-index: 100;
+  }
+
+  .icon-box {
+    padding: 5% 20%;
+  }
+
+
+//work
+#work.work{
+  background-color:#fff;
+ 
+}
+
+  //motivation 
+  #motivation {
+    .motivation-box{
+      padding: 1em 1em;
+    }
+  }
+  //header
+  .contact-box {}
+
+  .item-line {
+    margin-bottom: 1em;
+    border-width: 0;
+  }
+  //login
+  #modal.v_modal {
+    width: 100%;
+    height: 550px;
+    margin: none;
+  }
+
+  //recovery
+  #recovery.recovery-context{
+  width: 90%;
+
+  }
+
+  #passmodal.v-modal-2{
+   width: 100%;
+  }
+//privacity and conditional
+#boxmod.box-modaling{
+  padding-top: 1em;
+  
+}
+#modheader.modaling-header::before{
+    top: 50%;
+    height: 100px;
+
+}
+#modtitle.modaling-title{
+  padding-top: 2em;
+}
+#modicon.modaling-icon{
+width: 90px;
+height: 70px;
+top:50%;
+left: 40%;
+}
+  #box-img.box-img {
+    width: 100px;
+    height: 100px;
+    margin-top: 1em;
+  }
+
+  #section-login.section-login {}
+  //register
+  #register-form.register-form {
+    width: 95%;
+  }
+
+  #input-form.input-form {
+    padding: 0;
+  }
+
+  #btn-register.btn-register {
+    left: 0;
+  }
+
+  #modalig .v-snack__wrapper {
+    width: 95%;
+    display: block;
+    margin: auto;
+  }
+
+  #snackh .v-snack__wrapper {
+    width: 95%;
+    display: block;
+    margin: auto;
+    position: relative;
+    left: 0;
+  }
+
+  #snackh .icon-buying-home {
+    transform: scale(0.8);
+  }
+
+  #snackh.md .v-snack__wrapper {
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
+  //dashboard
+  .logo-dash {
+    display: none;
+  }
+
+ 
+
+  #pigicon.pig-icon {
+    width: 60%;
+  }
+
+ 
+
+  #gpig.g-pig {
+    border-right: none;
+    border-bottom: 2px solid rgba(189, 0, 142,1);
+    margin-bottom: 1em;
+  }
+
+  #infopiggy.info-piggy {
+    width: 100%;
+
+    &:before {
+      top: 0;
+      left: 0;
+    }
+  }
+  //progress
+  #progress.box-style {
+    top: 30px;
+  }
+
+  #buying.boxing {
+    width: 250px;
+  }
+
+  #piggyBox.boxing {
+    width: 250px;
+    position: relative;
+  }
+
+  #panel-buy.panel-buy {
+    width: 100%;
+  }
+
+  #paneltitle.boxing {
+    display: flex;
+    margin: 0 0 1em;
+  }
+
+  #buying.buying {
+    width: 250px;
+  }
+
+  #navHeader {
+    height: 70px;
+  }
+ 
+  /*time line*/
+
+  #stycker.stycker {
+    width: 80%;
+  }
+
+  #progressbox.progress-box {
+    position: relative;
+    top: -40px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  #timelinepiggy.timeline-piggy__item {
+    width: 100%;
+    top: 10px;
+
+    .line-my {
+      left: 0;
+    }
+
+    .line-refer {
+      right: 0;
+    }
+  }
+  //profile
+
+
+  .box-input.box-input-l input {
+    width: 100%;
+    transform: translate3d(0,0,0);
+    padding: 0.8em 0 0.2em 0.5em;
+    transition: padding 0.2s;
+
+    &:focus {
+      transform: translate3d(0,0,0);
+      width: 100%;
+    }
+
+    &:focus {
+      padding: 0.8em 0 0.2em 2.2em;
+    }
+  }
+
+  .box-input {
+    .icon-set.icon-set-l {
+      left: 4%;
+    }
+
+    .label.label-l {}
+
+    &:focus ~ .label.label-l {
+      left: 10%;
+    }
+  }
+
+  .btn-float.btn-float-l {
+    left: 60%;
+  }
+
+  .btn-float.btn-float-l-2 {
+    left: 10%;
+  }
+
+  /*tree*/
+  #nomcatgory.nom-catgory_tree{
+    width: 90%;
+    left: 5%;
+    top: 75%;
+
+  }
+  #catgorybox{
+    width: 100%;
+  }
+
+  //footer
+  .footer {
+    padding: 0.1em;
+  }
+  /*dashboard admin*/
+  #roleDmin.icon-admin-role {
+    left: -2%;
+  }
+  /*consulta*/
+  #tableCard .v-datatable {
+    width: 40%;
+  }
+
+  .consult-card {
+    #tableCard .v-datatable__actions__select {
+      transform: translateX(-40%);
+    }
+
+    .v-datatable__actions__pagination {
+      display: none;
+    }
+
+    #tableCard .v-datatable__actions__range-controls {
+      left: 60%;
+    }
+  }
+
+  #tableCard .v-table__overflow {
+    width: 40%;
+  }
+
+  #consult-card.consult-card {
+    padding: 1em;
+  }
+
+
+
+  #consulta {
+    .input_seach {
+      width: 90%;
+      top: 15%;
+      left: 5%;
+    }
+
+    .position_v2 {
+      left: 5%;
+    }
+  }
+
+  #searchbox .input_seach {
+    width: 95%;
+    left: 0;
+  }
+
+  #iconbank.icon-bank{
+    img{
+      width:40% ;
+    }
+    
+  }
+
+  #iconwtp.icon-whatssap{
+    img{
+      width: 24%;
+    }
+  }
+
+  .text-icon-wtp{
+    transform: translateX(-60%);
+  }
+
+
+
+
+}
+@include md(smallx) {}

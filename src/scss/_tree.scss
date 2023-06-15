@@ -1,0 +1,319 @@
+@mixin boxShadow() {
+  box-shadow: -1px 1px 4px rgba(0,0,0,0.17);
+}
+
+body{
+ margin: 0;
+ padding: 0;
+}
+
+.container {
+ width: 100%;
+ height: 100vh;
+ display: block;
+ /*overflow: hidden; */
+ justify-content: center;
+
+}
+
+.main-avatar {
+ position: relative;
+
+ width: 2500px;
+ height: auto;
+ top: 0%;
+ left: 0%;
+}
+
+@media screen and (max-width: 660px) {
+ .main-avatar {
+   left: 0%;
+ }
+}
+
+.tree {
+ width: 100%;
+ height: 500px;
+ display: block;
+ position: relative;
+ top: -10%;
+background-color: #fff;
+  overflow: scroll;
+  overflow-x: auto;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.17);
+  border-radius: 5px;
+
+  &::-webkit-scrollbar{
+    width: 5px;
+    height: 8px;
+
+  }
+
+  &::-webkit-scrollbar-thumb{
+      background-image: linear-gradient(to right, rgba(9, 132, 227,1),rgba(232, 40,151,1));
+    border-radius: 4px;
+  }
+
+.container::-webkit-scrollbar-track {
+    background: red;
+    border-radius: 4px;
+}
+}
+
+.tree ul {
+ padding-top: 30px;
+ position: relative;
+ transition: all 0.5s;
+ -webkit-transition: all 0.5s;
+ -moz-transition: all 0.5s;
+}
+
+.tree li {
+float: left;
+ text-align: center;
+ list-style-type: none;
+ position: relative;
+ padding: 20px 50px 0 30px;
+ transition: all 0.5s;
+ -webkit-transition: all 0.5s;
+ -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+.tree li::before, .tree li::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ right: 50%;
+ border-top: 2px solid #ccc;
+ width: 50%;
+ height: 20px;
+}
+
+.tree li::after {
+ right: auto;
+ left: 50%;
+ border-left: 2px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+ display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child {
+ padding-top: 0;
+}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after {
+ border: 0 none;
+}
+
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+ border-right: 2px solid #ccc;
+ border-radius: 0 5px 0 0;
+ -webkit-border-radius: 0 5px 0 0;
+ -moz-border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+ border-radius: 5px 0 0 0;
+ -webkit-border-radius: 5px 0 0 0;
+ -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+ content: '';
+ position: absolute;
+ top: 100%;
+ left: 50%;
+ border-left: 2px solid #ccc;
+ width: 0;
+ height: 20px;
+}
+
+.tree li a {
+ /*border: 1px solid #ccc;
+ padding: 5px 10px;*/
+ text-decoration: none;
+ color: #302e2e;
+ font-family: arial, verdana, tahoma;
+ font-size: 15px;
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover + ul li a {
+ background: #c8e4f8;
+ color: #000;
+ border: 1px solid #94a0b4;
+}
+
+/*Connector styles on hover*/
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before {
+ border-color: #478aff;
+}
+
+.avatar-circle {
+  position: relative;
+ width: 50px;
+ height: 50px;
+ text-align: center;
+ border-radius: 50%;
+ background-color: #3397fa;
+ -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.17);
+         box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.17);
+ display: block;
+ margin: auto;
+ border: 2px solid #fff;
+ position: relative;
+ margin-bottom: 1em;
+
+ &:hover > .mss-box{
+  transform: scale(1);
+ }
+}
+
+.mss-box{
+  position: absolute;
+  left: 140%;
+  top: 0;
+    background-image: linear-gradient(to right, rgba(249, 202, 36,1.0),rgba(235, 77, 75,1.0));
+
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.17);
+  border-radius: 5px;
+  padding: 2px 4px;
+  width: 140px;
+  height: 80px;
+  z-index: 100;
+  transform: scale(0);
+   transform-origin: center left;
+   transition: transform .2s ease-in;
+  &:before{
+    content: "";
+   position: absolute;
+   top: 10%;
+   left:-18%;
+
+    width: 0;
+    height: 0;
+    border-right: 30px solid rgba(249, 202, 36,1.0);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: rotate(deg);
+
+
+  }
+}
+
+.avatar-circle span {
+
+}
+
+.avatar-circle .img {
+ width: 70%;
+ height: auto;
+ -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+ margin-bottom: 1em;
+ margin-top: 0.5em;
+ display: block;
+ margin: 10% auto 20% auto;
+}
+
+.avatar-circle .corona {
+ width: 50%;
+ height: auto;
+ position: absolute;
+ top: 30px;
+ left: 60%;
+ z-index: 100;
+}
+
+.title-name{
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  left: -15%;
+ padding-top: 2px;
+}
+.sunmane{
+
+
+}
+
+.vd{
+left: 4%;
+}
+
+#lineM::before{
+  top: 10px;
+}
+
+.childs-2{
+  margin-top: 1em;
+}
+
+.theme--dark.application{
+  background: #f5f5f5 !important;
+}
+
+
+/* nomenclature */
+.nom-catgory_tree{
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  z-index: 2;
+  width: 30%;
+  height: auto;
+  padding: 0.5em;
+  @include boxShadow();
+  border-radius: 8px;
+  background-color: lighten(#3498db, 40);
+
+  .corona{
+  width:2%;
+  }
+}
+.icon_nom{
+  color: lighten(#2d3436, 20);
+  font-size: 2.2em;
+  position: relative;
+
+}
+.nom-catgory_box{
+  display: inline-flex;
+  width: 80%;
+}
+.catgory_item{
+
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 1em;
+  padding: 0.2em;
+  margin: auto;
+
+}
+.closet{
+  position: absolute;
+  left: 90%;
+  top: 10%;
+  color: #e74c3c;
+  font-size: 1.2em;
+  cursor: pointer;
+  &:hover{
+    color: darken(#e74c3c, 20);
+  }
+}

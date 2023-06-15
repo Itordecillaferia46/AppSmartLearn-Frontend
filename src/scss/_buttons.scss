@@ -1,0 +1,69 @@
+
+//colors
+$colors:(
+  grenden:(rgb(58, 232, 132),rgb(13, 152, 101)),
+  puple:(rgb(233, 0, 168),rgb(21, 153, 255)),
+  blued:(rgb(0, 168, 255),rgb(41, 128, 185))
+
+
+
+);
+
+.button{
+  position: relative;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+ font-family: 'PT Sans', sans-serif;
+ overflow: hidden;
+  @each $name,$bg in $colors {
+
+    &-#{$name}{
+      $primary: nth($bg, 1);
+        $secundary: nth($bg, 2);
+      background-image: linear-gradient(to right ,rgba($primary,1),rgba($secundary,1));
+    }
+
+    &--black{
+
+    }
+
+
+  }
+
+  &:before{
+    content: "";
+    position:absolute;
+    left: -30%;
+    top: 0%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.7);
+    transform: scale(1.8);
+    transition: transform .2s ease-out
+                left .2s ease-out;
+  }
+
+  &:hover::before{
+    transform: scale(2.2);
+    left: 40%;
+  }
+
+  a{
+    text-decoration: none;
+
+
+
+
+  }
+
+  &-color--black{
+    color: black;
+  }
+
+  &-gradient-org{
+    width: 30%;
+    background-image: linear-gradient(to right ,rgba(255,222,64,1),rgba(212,60,0,1));
+  }
+}

@@ -1,0 +1,194 @@
+#elipse.coin{
+  transform: translateY(-60px);
+  fill:green;
+  animation: flot .3s ease-out infinite;
+}
+
+.flot{
+    transform: translateY(40px);
+    opacity: 0;
+animation: bounce 1.8s cubic-bezier(0,.17,.11,1.71) both;
+}
+.floting{
+    transform: translateY(40px);
+    opacity: 1;
+animation: flot 1.8s ease-in-out infinite;
+}
+@keyframes flot{
+
+  0%{
+    transform: translateY(0px);
+        opacity: 0.4;
+  }
+
+  50%{
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateY(0px);
+    opacity: 0.4;
+  }
+}
+
+//scrolling
+.animatable-init{
+  position: relative;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: bounce 1s cubic-bezier(.11,.62,.48,1.49) both;
+}
+.animatable{
+  position: relative;
+  opacity: 0;
+  transform: translateY(60px);
+  &-d{
+    animation-delay: 2s;
+  }
+}
+.slide-up{
+  animation: bounce 1.2s cubic-bezier(0,.17,.11,1.71) both;
+}
+
+@keyframes bounce{
+  to{
+      transform: translateY(0px);
+        opacity: 1;
+  }
+}
+
+//SVG
+.rect{
+
+transform-origin: 5px 0%;
+
+    animation: loading 1s cubic-bezier(0,.17,.11,1.71) infinite;
+}
+
+@keyframes loading{
+
+  0%{
+  transform: scaleX(0.2);
+    background-image: linear-gradient(to right,rgba(243, 156, 18,1.0),rgba(252, 66, 123,1.0));
+  }
+
+  50%{
+    transform: scaleX(1);
+      background-image: linear-gradient(to right,rgba(243, 156, 18,1.0),rgba(232, 67, 147,1.0));
+  }
+
+  100%{
+    transform: scaleX(0.2);
+        background-image: linear-gradient(to right,rgba(243, 156, 18,1.0),rgba(252, 66, 123,1.0));
+  }
+}
+
+
+
+//money pig
+#slide.animar{
+  animation: slide 1s both;
+}
+@keyframes  slide {
+   0%{
+     opacity:1;
+      transform:translateY(0px);
+
+   }
+
+   100%{
+     opacity:0;
+      transform:translateY(140px);
+
+   }
+
+
+}
+
+
+.slide-right{
+  opacity: 0;
+    transform: translateX(20px);
+  animation: slideR 1.2s cubic-bezier(0,.17,.11,1.71) both;
+}
+
+@keyframes slideR{
+  to{
+      transform: translateX(0px);
+        opacity: 1;
+  }
+}
+
+.slide-left{
+  opacity: 0;
+    transform: translateX(-20px);
+  animation: slideL 1.2s cubic-bezier(0,.17,.11,1.71) both;
+}
+
+@keyframes slideL{
+  to{
+      transform: translateX(0px);
+        opacity: 1;
+  }
+}
+
+.slide-top{
+  opacity: 0;
+    transform: translateY(20px);
+  animation: slideT 1.2s cubic-bezier(0,.17,.11,1.71) both;
+}
+
+@keyframes slideT{
+  to{
+      transform: translateY(0px);
+        opacity: 1;
+  }
+}
+
+.scale{
+  transform-origin: center;
+  transform: scale3d(0);
+  animation: scale .2s both;
+}
+@keyframes scale{
+  to{
+        transform: scale3d(1);
+  }
+}
+
+.appear{
+  opacity: 0;
+  animation: appear .4s both;
+}
+@keyframes appear{
+  to{
+
+        opacity: 1;
+  }
+}
+.overlays-box{
+  position: relative;
+  &:before{
+    content: "";
+    top: 0;
+    left: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #F39C12;
+    opacity: 1;
+    transform: scale(0);
+    animation: transforming 1.2s  .8s ease-out both ;
+    animation-iteration-count: 2;
+    z-index: 100;
+   @keyframes transforming{
+     to{
+       transform: scale(6);
+       opacity: 0;
+     }
+   }
+
+  }
+}
