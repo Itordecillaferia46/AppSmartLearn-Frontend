@@ -24,8 +24,12 @@
                     class="latest-notice"
                   >
                     <v-row no-gutters class="cols-2 mx-auto">
-                      <v-col class="col-5" sm="8" md="5">
-                        <v-img height="280px" :src="notices.images"></v-img>
+                      <v-col class="col-5 contenedor" sm="8" md="5">
+                        <v-img 
+                        class="imagen"
+                        :src="notices.images"
+                       
+                        ></v-img>
                       </v-col>
                       <v-col class="col-7">
                         <v-card-title class="text-uppercase text-justify">{{
@@ -240,9 +244,26 @@ export default {
 };
 </script>
 <style scoped>
+
+
 .content img {
   margin: 10;
   width: 100px;
   height: 100px;
+  
 }
+
+.contenedor {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 </style>
