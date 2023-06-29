@@ -1,10 +1,10 @@
 <template>
 <div class="background" fluid>
   <v-app-bar  dark style="background: linear-gradient(90deg, rgba(0,112,192,0.75) 0%, rgba(112,48,160,0.5) 51%);">
-        <img src="../assets/logos/Logo.svg"  class="icon-move" width="50" alt="Logo" />
+        <img src="../assets/logos/LogoBlanco.svg"  class="icon-move" width="40" alt="Logo" />
 
       <v-toolbar-title class="font-weight-bold text-h5 mx-2">
-        SmartLearn
+        Portal Educativo
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -37,22 +37,19 @@
             <p class="text-center purple--text text-h5"> Tiene como objetivo ofrecer a una solución eficiente para la organización de tareas y la planificación de clases en el entorno académico.</p>
         </div>
 
-   
-         
-
         </div>
         <div class="col-6 my-auto">
           <div class="">
-            <v-img
-              max-width="520"
-              src="../assets/PortalEducativo.svg"
+           <v-img 
               class="mx-auto"
-            ></v-img>
+              max-height="600"
+              max-width="600"
+              src="../assets/PortalEducativo.svg"
+           ></v-img>
           </div> 
         </div>
       </div>
 
-  
   
       <div class="fondo" >
         <v-row>  
@@ -62,7 +59,7 @@
               <div class="user_card">
                 <div class="d-flex justify-content-center">
                   <div class="brand_logo_container">
-                    <img src="../assets/logos/Logo_Color.svg" class="brand_logo"  alt="Logo">
+                    <img src="../assets/logos/LogoColor.svg" class="logo my-auto" width="130"  alt="Logo">
                   </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
@@ -71,13 +68,13 @@
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                       </div>
-                      <input v-model="usuario" type="text" name="" class="form-control input_user" placeholder="Username">
+                      <input v-model="usuario" type="text" name="" class="form-control input_user" placeholder="Nombre de Usuario">
                     </div>
                     <div class="input-group mb-2">
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                       </div>
-                      <input v-model="contrasena" type="password" name="" class="form-control input_pass" placeholder="Password">
+                      <input v-model="contrasena" type="password" name="" class="form-control input_pass" placeholder="Contraseña">
                     </div>
                       <div class="d-flex justify-content-center mt-3 login_container" v-if="prueba==0">
                    <vs-button dark  class="btn login_btn" @click="login">Iniciar Sesión</vs-button>
@@ -103,7 +100,7 @@
                 
                 <div class="mt-4">
                   <div class="d-flex justify-content-center links">
-                    <a href="#" style="color: black">¿olvidaste tu contraseña?</a>
+                    <a href="#" style="color: black">¿Olvidaste tu contraseña?</a>
                   </div>
                 </div>
               </div>
@@ -119,194 +116,7 @@
           </v-row>
         </div>
        
-       
-       <!-- <div class="fondo2">
-        <v-container>
-          <v-row>
-            <v-col cols="12">
-              <v-timeline :dense="$vuetify.breakpoint.smAndDown">
-                <v-timeline-item
-                  color="purple lighten-2"
-                  fill-dot
-                  right
-                >
-                  <v-card>
-                    <v-card-title class="purple lighten-2">
-                      <v-icon
-                        dark
-                        size="42"
-                        class="mr-4"
-                      >
-                        mdi-magnify
-                      </v-icon>
-                      <h2 class="text-h4 white--text font-weight-light" style=" font-weight: bold;">
-                        ¿Que es EDUCODE?
-                      </h2>
-                    </v-card-title>
-                    <v-container>
-                      <v-row>
-                        <v-col
-                          cols="12"
-                          md="10"
-                          class="letras2"
-                        >
-                        Educode es un software gratuito, sin fines de lucro. Tiene como objetivo principal enseñar conceptos basicos de programacion mediante el uso de Pseudocodigos, para generar en los estudiantes un aprendizaje significativo.
-                        </v-col>
-                        <v-col
-                          class="hidden-sm-and-down text-right"
-                          md="2"
-                        >
-                          <v-icon size="64">
-                            mdi-calendar-text
-                          </v-icon>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-card>
-                </v-timeline-item>
-          
-                <v-timeline-item
-                  color="amber lighten-1"
-                  fill-dot
-                  left
-                  small
-                >
-                  <v-card>
-                    <v-card-title class="amber lighten-1 justify-end">
-                      <h2 class="text-h4 mr-4 white--text font-weight-light">
-                        Historia de EDUCODE
-                      </h2>
-                      <v-icon
-                        dark
-                        size="42"
-                      >
-                        mdi-home-outline
-                      </v-icon>
-                    </v-card-title>
-                    <v-container>
-                      <v-row>
-                        <v-col
-                          cols="12"
-                          md="10"
-                          class="letras2"
-                        >
-                          Educode nace como alternativa para ayudar a solucionar dificultades evidenciadas en estudiantes al momento de resolver problemas mediante el uso de algoritmos.
-                        </v-col>
-                      
-                      </v-row>
-                    </v-container>
-                  </v-card>
-                </v-timeline-item>
-          
-                <v-timeline-item
-                  color="cyan lighten-1"
-                  fill-dot
-                  right
-                >
-                  <v-card>
-                    <v-card-title class="cyan lighten-1">
-                      <v-icon
-                        class="mr-4"
-                        dark
-                        size="42"
-                      >
-                        mdi-book-check
-                      </v-icon>
-                      <h2 class="text-h4 white--text font-weight-light">
-                        Objetivos de EDUCODE
-                      </h2>
-                    </v-card-title>
-                    <v-container>
-                      <v-row>
-                        <v-col
-                          cols="12"
-                          md="10"
-                          class="letras2"
-                        >
-                          Este software educativo espera posicionarse en el mercado digital, como una alternativa que puedan adaptar las instituciones educativas al momento de enseñar temas relacionados a los algortmos.
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-card>
-                </v-timeline-item>
-          
-                <v-timeline-item
-                  color="red lighten-1"
-                  fill-dot
-                  left
-                  small
-                >
-                  <v-card>
-                    <v-card-title class="red lighten-1 justify-end">
-                      <h2 class="text-h4 mr-4 white--text font-weight-light">
-                        ¿Como funciona EDUCODE?
-                      </h2>
-                      <v-icon
-                        dark
-                        size="42"
-                      >
-                        mdi-account-multiple-outline
-                      </v-icon>
-                    </v-card-title>
-                    <v-container>
-                      <v-row>
-                        <v-col
-                          class="hidden-sm-and-down"
-                          md="2"
-                        >
-                          <v-icon size="64">
-                            mdi-server-network
-                          </v-icon>
-                        </v-col>
-                        <v-col
-                          cols="12"
-                          md="10"
-                          class="letras2"
-                        >
-                         Educode es una plataforma que plantea diferentes desafios para que los estudiantes superen, estos estan basados en conceptos basicos de programación.
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-card>
-                </v-timeline-item>
-          
-                <v-timeline-item
-                  color="green lighten-1"
-                  fill-dot
-                  right
-                >
-                  <v-card>
-                    <v-card-title class="green lighten-1">
-                      <v-icon
-                        class="mr-4"
-                        dark
-                        size="42"
-                      >
-                        mdi-code-tags-check
-                      </v-icon>
-                      <h2 class="text-h4 white--text font-weight-light">
-                        ¡MOTIVATE! Recurda esto.
-                      </h2>
-                    </v-card-title>
-                    <v-container>
-                      <v-row>
-                        <v-col class="letras2">
-                          <li>
-                              "No tienes que ser grande para comenzar, pero tienes que comenzar para ser grande” Zig Ziglar.
-                          </li>
-                          <li>
-                            "Si crees que algo es imposible, tú lo harás posible” Bruce Lee.
-                          </li>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-card>
-                </v-timeline-item>
-              </v-timeline>
-            </v-col>
-          </v-row>
-        </v-container>
-        </div>  -->
+      
     </v-container>
   </div>
   </template>
@@ -423,6 +233,15 @@
       transform: translateY(-2px);
     }
   }
+
+  .imgsvg{
+    background-image: url(../assets/PortalEducativo.svg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .background{
     background-image:url("../assets/Background.svg");
     background-size: cover;
@@ -432,38 +251,7 @@
     width: 100%;
     height: 100%;
   }
-  .fondo2{
-    background-image:url("../assets/fondoTimeLine.png");
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-    margin:0;
-    }
 
-
-  .letras{
-    color:white;
-    margin:auto;
-    text-align:center;
-    font: bold 80px/1 arial;
-    text-transform: uppercase;
-    color: rgb(244, 244, 244);
-    text-shadow: 0  2px 0 black,
-                 0  4px 0 black,
-                 0  6px 0 black,
-                 0  8px 0 black,
-                 0 10px 0 black,
-                 0 12px 0 black;
-    }
-    
-    .letras2{
-    font-size:25px;
-    color:black;
-    margin:auto;
-    text-align:justify;
-    font-family: "Mystery Quest", cursive;
-    }
     
     @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
     .user_card {
@@ -510,7 +298,7 @@
     width: 100%;
     background: #0079C4 !important;
     color: #FFFFFF !important;
-    font-weight: 700;
+    
     }
     
     .login_btn:focus {
