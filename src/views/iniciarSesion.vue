@@ -1,10 +1,10 @@
 <template>
 <div class="background" fluid>
   <v-app-bar  dark style="background: linear-gradient(90deg, rgba(0,112,192,0.75) 0%, rgba(112,48,160,0.5) 51%);">
-        <img src="../assets/logos/Logo_BN.svg" class="icon-move " width="45" alt="Logo" />
+        <img src="../assets/logos/Logo.svg"  class="icon-move" width="50" alt="Logo" />
 
       <v-toolbar-title class="font-weight-bold text-h5 mx-2">
-        SMARTLEARN
+        SmartLearn
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -22,30 +22,22 @@
 
 
 <v-container fluid  > 
-<!-- <div> -->
-
-
-  
-
-      <div class="row mx-5">
+      <div class="row">
         <div class="col-6 my-auto">
-          <!-- <v-img
-              contain
-              max-height="250"
-              max-width="250"
-              class="mx-auto my-5"
-              src="../assets/logos/Logo_Color.svg"
-            >
-          </v-img> -->
             <v-img
               contain
-              max-height="800"
-              max-width="800"
-              class="mx-5"
+              max-height="500"
+              max-width="500"
+              class="mx-auto"
               src="../assets/logos/Logotipo.svg"
             >
           </v-img>
-          <v-divider></v-divider>
+          <v-divider class="my-0"></v-divider>
+          <div class="container-md">
+            <p class="text-center purple--text text-h5"> Tiene como objetivo ofrecer a una solución eficiente para la organización de tareas y la planificación de clases en el entorno académico.</p>
+        </div>
+
+   
          
 
         </div>
@@ -54,6 +46,7 @@
             <v-img
               max-width="520"
               src="../assets/PortalEducativo.svg"
+              class="mx-auto"
             ></v-img>
           </div> 
         </div>
