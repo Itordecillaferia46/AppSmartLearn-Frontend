@@ -78,9 +78,9 @@
                 <v-btn @click="openModal(notice)" text color="orange lighten-2"
                   >Ver mas...
                 </v-btn>
-                <v-btn @click="eliminarNoticia(notice._id)">
+                <!-- <v-btn @click="eliminarNoticia(notice._id)">
                   <v-icon>mdi-delete</v-icon></v-btn
-                >
+                > -->
               </v-card-actions>
             </v-card>
           </v-row>
